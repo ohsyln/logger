@@ -30,14 +30,14 @@ class Log:
   # Prints to STDOUT and log to file
   # Does not manage log size, be careful when using
   def plog(self, s):
-    out = prepend_datetime(s)
+    out = self.prepend_datetime(s)
     print(out) # STDOUT
     self.write_to_log(out) # Logfile
 
   # Only log to file 
   # Does not manage log size, be careful when using 
   def log(self, s):
-    out = prepend_datetime(s)
+    out = self.prepend_datetime(s)
     self.write_to_log(out) # Logfile
 
 # Returns current datetime
