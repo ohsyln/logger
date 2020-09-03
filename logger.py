@@ -21,7 +21,7 @@ class Log:
   # Helper function
   def write_to_log(self, out):
     f = open(self.log_location, 'a')
-    f.write(out)
+    f.write(out + "\n")
     f.close()
   # Helper function
   def prepend_datetime(self, s):
