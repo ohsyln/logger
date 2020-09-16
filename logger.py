@@ -7,8 +7,10 @@ import os
 #   # Logs to <.py name>.log; e.g. main.py.log
 #   log = logger.Log(__file__) 
 #
+#   # Prepends datetime to message
 #   log.plog("This message prints to STDOUT and logs to file")
 #   log.log("This message logs to file")
+#   log.p("This message prints to STDOUT")
 
 class Log:
   def __init__(self, name):
@@ -39,6 +41,10 @@ class Log:
   def log(self, s):
     out = self.prepend_datetime(s)
     self.write_to_log(out) # Logfile
+    
+  def p(self, s):
+    out = self.prepend_datetime(s)
+    print(out) # STDOUT
 
 # Returns current datetime
 def now():
